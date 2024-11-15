@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "82c3033b-c214-4435-a7c7-56f5676d4f6c",
+		"name": "Spy Cat Agency API",
+		"description": "Postman requests for testing the Spy Cat Agency API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27918221"
+	},
+	"item": [
+		{
+			"name": "Create Spy Cat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Whiskers\", \"years_of_experience\": 3, \"breed\": \"Siamese\", \"salary\": 50000.00}"
+				},
+				"url": "http://127.0.0.1:8000/api/cats/"
+			},
+			"response": []
+		},
+		{
+			"name": "List All Spy Cats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/cats/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Spy Cat Salary",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"salary\": 55000.00}"
+				},
+				"url": "http://127.0.0.1:8000/api/cats/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Spy Cat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/cats/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Mission with Targets",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"assigned_cat\": null, \"targets\": [{\"name\": \"Target Alpha\", \"country\": \"USA\", \"notes\": \"High priority\"}, {\"name\": \"Target Beta\", \"country\": \"Canada\", \"notes\": \"Low priority\"}]}"
+				},
+				"url": "http://127.0.0.1:8000/api/missions/"
+			},
+			"response": []
+		},
+		{
+			"name": "List All Missions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/missions/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Mission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/missions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Cat to Mission",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"assigned_cat\": 1}"
+				},
+				"url": "http://127.0.0.1:8000/api/missions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Target as Complete",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"target_id\": 1}"
+				},
+				"url": "http://127.0.0.1:8000/api/missions/1/complete_target/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mission",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/missions/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Notes",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
